@@ -1,0 +1,13 @@
+a tokenizes as  identifier:a
+a = b tokenizes as  identifier:a assignment identifier:b
+num3 = num1/2 + num2 tokenizes as  identifier:num3 assignment identifier:num1 operator:/ number:2 operator:+ identifier:num2
+10=a tokenizes as  number:10 assignment identifier:a
+a = a + 1 tokenizes as  identifier:a assignment identifier:a operator:+ number:1
+a + 2 * 3 - c + d*e tokenizes as  identifier:a operator:+ number:2 operator:* number:3 operator:- identifier:c operator:+ identifier:d operator:* identifier:e
+a              = a             + 2*a tokenizes as  identifier:a assignment identifier:a operator:+ number:2 operator:* identifier:a
+a$1 + num1 tokenizes as  identifier:a error
+$a1 = 20 tokenizes as  error
++ a + 10 tokenizes as  operator:+ identifier:a operator:+ number:10
+a = -1 tokenizes as  identifier:a assignment operator:- number:1
+a+=10 tokenizes as  identifier:a operator:+ assignment number:10
+x=a++ tokenizes as  identifier:x assignment identifier:a operator:+ error
